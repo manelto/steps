@@ -23,7 +23,7 @@ void accel_handler(AccelData *data, uint32_t num_samples)
   // data is an array of num_samples elements.
   // num_samples was set when calling accel_data_service_subscribe.
   static char buffer[]= "XYZ: 9999 / 9999 / 9999";
-  snprintf(buffer, sizeof("XYZ: 9999 / 9999 / 9999"), "XYZ: %d / %d / %d");
+  snprintf(buffer, sizeof("XYZ: 9999 / 9999 / 9999"), "XYZ: %d / %d / %d", data[0].x,data[0].y,data[0].z);
   text_layer_set_text(text_layer_1, buffer);
 }
 
