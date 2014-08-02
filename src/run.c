@@ -17,7 +17,6 @@ TextLayer *connection_layer;
 //parte accelerometer
 TextLayer *text_layer_1, *text_layer_2;
 char tap_text[11] = " Golpe:   ";
-char Mov_text[21] = " Axis:  X /  Y /  Z ";
                      
 void accel_handler(AccelData *data, uint32_t num_samples)
 {
@@ -25,7 +24,7 @@ void accel_handler(AccelData *data, uint32_t num_samples)
   // num_samples was set when calling accel_data_service_subscribe.
   static char buffer[]= "XYZ: 9999 / 9999 / 9999";
   snprintf(buffer, sizeof("XYZ: 9999 / 9999 / 9999"), "XYZ: %d / %d / %d";
-  text_layer_set_text(text_layer_1, Mov_text);
+  text_layer_set_text(text_layer_1, buffer);
 }
 
 void tap_handler(AccelAxisType axis, int32_t direction)
