@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "Manel Torrecilla",
+    "longName": "Steps",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "shortName": "Steps",
+    "uuid": "65e6d1e3-928c-4eb9-b700-4e2937baae15",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
