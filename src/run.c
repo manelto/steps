@@ -23,38 +23,8 @@ void accel_handler(AccelData *data, uint32_t num_samples)
 {
   // data is an array of num_samples elements.
   // num_samples was set when calling accel_data_service_subscribe.
-    
-  if (data[0].x > 0)
-  {
-    Mov_text[7] = '+';
-  } else if (data[0].x < 0)
-  {
-    Mov_text[7] = '-';
-  } else {
-    Mov_text[7] = '0';
-  }
-
-  if (data[0].y > 0)
-  {
-    Mov_text[12] = '+';
-  } else if (data[0].y < 0)
-  {
-    Mov_text[12] = '-';
-  } else {
-    Mov_text[12] = '0';
-  }
-  
-  if (data[0].z > 0)
-  {
-    Mov_text[17] = '+';
-  } else if (data[0].z < 0)
-  {
-    Mov_text[17] = '-';
-  } else {
-    Mov_text[17] = '0';
-  }
-  
-  Mov_text[20] = 0;
+  static char buffer[]= "XYZ: 9999 / 9999 / 9999";
+  snprintf(buffer, sizeof("XYZ: 9999 / 9999 / 9999"), "XYZ: %d / %d / %d";
   text_layer_set_text(text_layer_1, Mov_text);
 }
 
