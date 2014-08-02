@@ -100,13 +100,15 @@ void inicio(void)
   
   
   //parte accelerometer
-  Layer *window_layer = window_get_root_layer(window);
-  
-  text_layer_1 = text_layer_create(GRect(15, 0, 110, 18));
-  text_layer_2 = text_layer_create(GRect(15, 20, 110, 18));
-    
-  layer_add_child(window_layer, text_layer_get_layer(text_layer_1));
-  layer_add_child(window_layer, text_layer_get_layer(text_layer_2));
+
+  text_layer_1 = text_layer_create(GRect(0, 0, 144, 18));
+  text_layer_2 = text_layer_create(GRect(0, 20, 144, 18));
+  text_layer_set_text_color(text_layer_1, GColorWhite);
+  text_layer_set_background_color(text_layer_1, GColorClear);
+  text_layer_set_text_color(text_layer_2, GColorWhite);
+  text_layer_set_background_color(text_layer_2, GColorClear);
+  layer_add_child(root_layer, text_layer_get_layer(text_layer_1));
+  layer_add_child(root_layer, text_layer_get_layer(text_layer_2));
  
   accel_data_service_subscribe(1, accel_handler);
   accel_service_set_sampling_rate(ACCEL_SAMPLING_10HZ);
